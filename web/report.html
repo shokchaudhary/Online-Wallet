@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Report</title>
+    <link rel="stylesheet" href="./css/report.css">
+  </head>
+  <body>
+    <table id="one">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mode Name </td>
+           <td>Trackable</td>
+        </tr>
+        <tr>
+        <td>
+ Track Duration
+        </td>
+        <td>
+          387 Days
+        </td>
+        </tr>
+        <tr>
+          <td>
+            Track Sim Duration
+          </td>
+          <td>
+            11 Times
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" name="button1" id="button1">More Details</button>
+    <button type="button" name="button2" id="button2">Blocked</button>
+<div id="more-info">
+    <table id="two">
+      <thead>
+        <th>Entries</th>
+        <th>Information</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wi-Fi Type</td>
+          <td>Hotspot Android</td>
+        </tr>
+        <tr>
+          <td>Tracker I.D.</td>
+          <td>192.168.254.128</td>
+        </tr>
+        <tr>
+          <td>Gateway I.P.</td>
+          <td>192.168.254.252</td>
+        </tr>
+        <tr>
+          <td>Gateway M.A.C.</td>
+          <td>8c:25:06:e1:6c:d9</td>
+        </tr>
+        <tr>
+          <td>B.S.S.I.D.</td>
+          <td>8c:25:06:e9:6c:d9</td>
+        </tr>
+        <tr>
+          <td>Vendor</td>
+          <td>Bihar</td>
+        </tr>
+        <tr>
+          <td>
+            Billing Phone
+          </td>
+          <td>+17144671026</td>
+        </tr>
+        <tr>
+          <td>
+            Billing Address
+          </td>
+          <td>Bristol St C240 Santa Ana , CA 92706 , USA</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" name="button" id="button3">Done</button>
+    </div>
+    <script>
+      var button1 = document.getElementById("button1");
+      button1.addEventListener("click", ()=>{
+        var div = document.getElementById("more-info");
+        div.style.display = "block";
+      });
+      var button3 = document.getElementById("button3");
+      button3.addEventListener("click" , ()=>{
+          var div = document.getElementById("more-info");
+          div.style.display = "none";
+      })
+    </script>
+  </body>
+</html>

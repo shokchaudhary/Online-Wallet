@@ -1,0 +1,129 @@
+*{
+box-sizing: border-box;
+}
+body{
+  margin-left: 0;
+  height: 100vh;
+  width: 100vw;
+  /* overflow: hidden; */
+  font-family: 'Lato' , sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  background-image: url(../img/bakground1.jpeg);
+}
+.login-div
+{
+  width: 90vh;
+  height: 80vh;
+  padding : 6px 35px 35px 35px;
+  border-radius: 40px;
+  /* background-color: red; */
+  box-shadow: 13px 13px 20px lightgreen ,
+  -13px -13px 20px green;
+}
+#head
+{
+  border-radius: 50%;
+}
+.logo
+{
+  margin : 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+box-shadow:
+            /* logo shadow */
+            0px 0px 2px green,
+            /*offset */
+           /*bottom right */
+           0px 0px 0px 5px green ,
+           8px 8px 15px green ,
+           /* top left */
+           -8px -8px 15px green;
+}
+.title
+{
+  font-variant: small-caps;
+  text-align: center;
+  font-size: 28px;
+  padding-top: 2vh;
+  letter-spacing: 0.5px;
+  color: lightgreen;
+}
+.sub-title
+{
+  font-variant: small-caps;
+  text-align: center;
+  font-size: 0.9rem;
+  padding-top: 7px;
+  padding-bottom: 3vh;
+  letter-spacing: 0.3px;
+  color: lightgreen;
+}
+.field input
+{
+  border : none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  color: lightgreen;
+  padding :2vh 2vh 2vh 2vh;
+}
+.username , .password
+{
+margin-bottom: 30px;
+border-radius: 25px;
+border: 1px solid green;
+}
+.field svg
+{
+height: 22px;
+margin : 0px 10px -3px 25px;
+color: lightgreen;
+}
+button
+{
+margin: 0;
+background: none;
+outline: none;
+
+}
+.signin-button
+{
+  outline: none;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  border-radius: 3rem;
+  font-size: 20px;
+  font-weight: 700;
+  color: red;
+  background-color: lightgreen;
+  text-align: center;
+  padding: 2vh;
+}
+button:hover
+{
+  background: red;
+  color :lightgreen;
+}
+
+.forget-password
+{
+  font-size: 0.8rem;
+  padding-top: 2vh;
+  text-align: center;
+  color: red;
+}
+.forget-password a
+{
+  text-decoration: none;
+}
+.forget-password a:hover
+{
+  color : red;
+}

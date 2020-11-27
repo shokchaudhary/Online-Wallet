@@ -1,0 +1,419 @@
+/* adding comment */
+body
+{
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url(../img/bakground1.jpeg);
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100%;
+  color: lightgreen;
+
+}
+.input-sm
+{
+  display: inline;
+  width: 50%;
+}
+.button
+{
+  display: inline;
+}
+.form
+{
+  padding-top: 30%;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+label
+{
+  font-size: 2rem;
+}
+button
+{
+  border-radius: 3px;
+}
+small
+{
+  color: lightgreen;
+}
+.animation
+{
+  width : 100%;
+  height: 5px;
+  background-color: green;
+  position: fixed;
+  display: none;
+  animation : mymove 5s infinite alternate;
+}
+@keyframes mymove {
+  0% {right : 0%;}
+  25% { right : 25%}
+  50% {right: 50%}
+  75% {right : 100%}
+  100% {right : 0%}
+}
+.parent
+{
+  background-color: white;
+  display: none;
+}
+.main-container
+{
+  width: 100%;
+  height: 100%;
+  /* background-color: rebeccapurple; */
+}
+.pin-heading
+{
+  text-align: center;
+  font-size: 30px;
+}
+.pin
+{
+  width: 150px;
+  height: 10vh;
+  /* background : orange; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+#pin1 , #pin2 , #pin3 , #pin4
+{
+  height: 30%;
+  width: 10%;
+  background-color: pink;
+  border-radius: 50%;
+}
+#input-pin
+{
+  background: transparent;
+  border: border;
+  border-radius: 30px;
+  text-align: center;
+}
+#pin-div
+{
+  text-align: center;
+  margin-top: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.pin-submit-button , #new-payment
+{
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+.payment-option
+{
+  margin: 0 auto;
+  margin-top: 20px;
+
+width: 400px;
+height: fit-content;
+/* background-color: pink; */
+text-align: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
+/* importing google font for Scribber logo 
+as no font was specified in project detail */
+
+.input-buttons
+
+/*  signin signup div */
+    {
+    position: absolute;
+    right: 0px;
+    margin: 0.3rem;
+}
+
+#signin,
+/*  signin signup buttons */
+#signup {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.logo {
+    /* styling logo */
+    padding-top: 0;
+    font-family: 'Bilbo Swash Caps', cursive;
+}
+
+#main {
+    /* main heading */
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    color: blue;
+    margin-left: 0.5%;
+}
+
+
+
+#signin {
+    margin-right: 0.3rem;
+}
+
+#signinModal,
+#signupModal,
+#penPostModal {
+    font-family: 'Fira Sans', sans-serif;
+    /* display: none; */
+    /* hidden by default*/
+    position: relative;
+    /* fix located */
+    /* z-index: 1; */
+    /* place on the top*/
+    padding-top: 100px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* auto scroll */
+    /* background-color: white; */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+#modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 350px;
+
+}
+
+.close {
+    position: absolute;
+    float: right;
+    color: grey;
+    cursor: pointer;
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    top: -1rem;
+    right: 0;
+    margin: 0.5rem;
+}
+
+
+.modal-header {
+    padding: 2px 16px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 16px 16px;
+
+}
+
+.modal-heading {
+    font-weight: 1.3rem;
+}
+
+.signin-option input,
+.signup-option input,
+.penPost-option input,
+.penPost-option textarea {
+    outline: 0;
+    background: #f3f1f1;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.signin-option button,
+.signup-option button,
+.penPost-option button {
+    text-transform: capitalize;
+    outline: 0;
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: 0;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 15px;
+
+}
+
+.signin-option button,
+.signup-option button {
+
+    width: 100%;
+}
+
+.signin-option .signup-option,
+.penPost-option {
+    margin: 0.5rem;
+}
+
+.not-member {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#yes {
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+#show-signup a {
+    font-family: sans-serif;
+
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+.labels {
+    font-weight: bolder;
+}
+
+#penPostModal #modal-content {
+    width: 70%;
+
+}
+
+#signupModal,
+#penPostModal {
+    padding-top: 20px;
+}
+
+.create-button {
+    width: 100%;
+    text-align: center;
+}
+
+.create-button button {
+    width: fit-content;
+}
+
+.penPost-option input {
+    width: 50%;
+}
+
+.penPost-option textarea {
+    border: 1px solid #bdafaf;
+}
+
+div#content-title {
+    padding-top: 0vh;
+    padding-bottom: 3vh;
+}
+
+div#content-text {
+    margin-bottom: 0vh;
+}
+
+h2#penPost-heading {
+    padding: 0;
+}
+.success-transfer
+{
+  margin-top: 10px;
+  display: none;
+}
+.success-add-wallet
+{
+  display: none;
+  margin-top: 10px;
+  background: rebeccapurple;
+}
+#wallet-total-amount
+{
+position: relative;
+left: 0;
+height: 100px;
+width: 100px;
+background: rgb(117, 235, 62);
+border-radius: 30px;
+}
+#wallet-total-amount
+{
+  color: black;
+  font-size: 20px;
+}
+#moneydiv
+{
+  position: relative;
+  top: 50px;
+ height: fit-content;
+ width: fit-content;
+}
+.payment
+{
+  display: none;
+}
+.History
+{
+  position: absolute;
+  top : 0;
+  right: 0;
+}
+.history-close
+{
+  display: none;
+}
+.WalletHeading
+{
+  height: 100px;
+  width: 120px;
+  color: orange;
+  position: absolute;
+  left: 50%;
+  margin: 0 auto;
+  background: white;
+  font-size: 20px;
+  border-radius: 30px;
+text-align: center;
+font-weight: bolder;
+}
+.history-heading 
+{
+  text-align  : left;
+  font-size: 20px;
+  margin-bottom: 10px;
+}

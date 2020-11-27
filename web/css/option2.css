@@ -1,0 +1,75 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  background: url("../img/bakground1.jpeg");
+  opacity: 1;
+  color: white;
+}
+h1
+{
+  margin-bottom: 30px;
+}
+.parent
+{
+  margin-top: 100px;
+  align-items: center;
+  text-align: center;
+  /* display: table-cell; */
+}
+.option
+{
+  /* display: table; */
+  height: 100vh;
+}
+button
+{
+  border : none;
+  border-radius: 2px;
+  padding: 5px;
+}
+#btn1 , #btn2 , #btn3
+{
+  margin : 5rem;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover
+{
+  color: blue;
+    text-decoration: none;
+}
+#tracker
+{
+  display: none;
+}
+p
+{
+  font-size: 40px;
+}
+.animation
+{
+  width : 100%;
+  position: relative;
+  height: 5px;
+  background-color: green;
+  display: none;
+  animation : mymove 5s infinite alternate;
+}
+@keyframes mymove {
+  0% {right : 0%;}
+  25% { right : 25%}
+  50% {right: 50%}
+  75% {right : 100%}
+  100% {right : 0%}
+}
+p#link
+{
+  display: none;
+}
+.warning 
+{
+  display: none;
+}

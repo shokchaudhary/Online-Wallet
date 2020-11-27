@@ -1,0 +1,9 @@
+{
+  "name" : "soak",
+  "version" : "1.0.0",
+  "script" : {
+    "start" : "php index.php"
+  },
+  "author" : "chaudhary shok",
+  "license" : "ISC"
+}
