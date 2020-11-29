@@ -73,3 +73,53 @@ p#link
 {
   display: none;
 }
+.money-form
+{
+  text-align: center;
+  background: pink;
+  background-image: linear-gradient(to right , rgb(170, 60, 60) , rgb(238, 217, 25));
+  color: green;
+  width: 300px;
+  border-radius: 20px;
+  position: absolute;
+  top: 30%;
+  left: 40vw;
+  color: white;
+}
+input
+{
+  background-color : white;
+}
+button 
+{
+  background-color: green;
+  color: white;
+  margin-top: 10px;
+}
+.money-heading-box
+{
+background: red;
+font-weight: bolder;
+text-align: center;
+border-radius: 30px;
+}
+.parent
+{
+  display: none;
+}
+#warning-text
+{
+  margin-top: 5px;
+  font-size: 20px;
+}
+input
+{
+  background: rgb(81, 199, 81);
+  border-radius: 20px;
+  color: black;
+}
+.five-success
+{
+  color: rgb(89, 217, 240);
+  
+}
