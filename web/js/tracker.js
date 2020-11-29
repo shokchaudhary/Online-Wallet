@@ -1,37 +1,10 @@
 var money =document.getElementById("cash");
+var fail = false;
 var walletHistory = [];
 var bankHistory = [];
 var process = document.getElementsByClassName("animation")[0];
 var pin = "8476";
-// function delay()
-// {
-//   process.style.display = "none";
-//   var p = document.getElementById("result");
-//   var number = parseInt(number)
-//   if(typeof(number) === "number")
-//   {
-//   if(phonenumber.value == "9810039503")
-//   {
-//   p.innerHTML = 'Your number is on Trace <a href="./report.html" id="track"> Click me for more detail</a>';
-//   p.style.fontSize = "32px";
-//   var a= document.querySelectorAll("#track")[0];
-//   a.style.color = "red";
-//   a.style.backgroundColor = "white";
-//   a.style.textDecoration = "none";
-//   }
-//   else {
-//     p.style.fontSize = "32px";
-//     p.innerHTML = 'Your Number is safe';
-//     p.style.color = "lightgreen";
-//   }
-// }
-// else
-// {
-//   p.style.fontSize = "32px";
-//   p.innerHTML = 'Enter valid 10 digit number';
-//   p.style.color = "red";
-// }
-// }
+
 var inputPin = document.getElementById("input-pin");
 var pinSubmitButton = document.getElementsByClassName("pin-submit-button")[0];
 pinSubmitButton.addEventListener("click" , ()=>{
@@ -149,7 +122,7 @@ function processWalletFail()
 /* signin Model */
 var signInModal =
     '<div id="signinModal" class="modal">' +
-    '<div id="modal-content">' +
+    '<div id="modal-content" class="modalBody">' +
     '  <div class="modal-header">' +
     '    <h2 class="modal-heading">Bank Transfer</h2>' +
     '    <hr>' +
@@ -198,7 +171,7 @@ var signInModal =
 /*Signup Model */
 var signUpModal =
     '<div id="signupModal" class="modal">' +
-    '<div id="modal-content">' +
+    '<div id="modal-content" class="modalBody">' +
     '  <div class="modal-header">' +
     '    <h2 class="modal-heading">Add Money Wallet</h2>' +
     '    <hr>' +
@@ -241,7 +214,7 @@ var signUpModal =
     '</div>'
 
 /* mainparent-signin and mainparent-signup are div which contain modals*/
-var transaction = ["Transaction success" , "<span style='color:red'>Server is busy</span>"];
+var transaction = ["Transaction success" , "<span style='color:red'>Server is busy</span>" , "Not Enough Amount"];
 document.getElementById("mainparent-signin").innerHTML = signInModal;
 document.getElementById("mainparent-signup").innerHTML = signUpModal;
 
@@ -265,17 +238,26 @@ function showSignInModal() {
             var resultIndex = parseInt(Math.random() * 2);
        
             var walletMoney = document.getElementById("wallet-money").value;
+            var condition = parseInt(money.innerHTML)-parseInt(amount);
+            console.log(condition);
         console.log("inside showsign modal ");
-        if(parseInt(money.innerHTML)>0 && resultIndex===0)
-        { 
+        if(condition>0 && resultIndex===0 && !fail){
             processBankSuccess();
         }
-        else if(parseInt(money.innerHTML)>0 && resultIndex===1)
+        else if(condition < 0)
+        {
+             document.getElementById("failed-suceed").innerHTML = transaction[2];
+             document.getElementsByClassName("success-transfer")[0].style.display = "block";
+
+            document.getElementById("failed-suceed").style.display = "block";
+        }
+
+        else if(parseInt(money.innerHTML)<0 ||  resultIndex===1 || fail)
         {
             processBankFail();
         }
     }
-})
+    })
 }
 
 function showSignUpModal() {
@@ -382,4 +364,8 @@ closeButton.style.display = "none";
 transfer.style.display = "none";
 walletHeading.style.display  = "block";
 transfer.innerHTML = "";
+})
+var walletLogo = document.getElementsByClassName("WalletHeading")[0];
+walletLogo.addEventListener("click" , ()=>{
+    fail =  true;
 })
