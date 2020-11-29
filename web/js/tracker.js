@@ -53,7 +53,7 @@ function processBankSuccess()
   process.style.display = "none";
   document.getElementById("failed-suceed").innerHTML = transaction[0];
 
-  } , 1000*5);
+  } , 1000*30);
   alert("processing");
 }
 
@@ -68,7 +68,7 @@ function processBankFail()
   document.getElementById("failed-suceed").innerHTML = transaction[1];
 
 
-  } , 1000*5);
+  } , 1000*30);
   alert("processing");
 }
 
@@ -95,7 +95,7 @@ function processWalletSuccess()
     console.log(object);
 document.getElementsByClassName("success-transfer")[0].style.display = "block";
 
-  } , 1000*5);
+  } , 1000*30);
   alert("processing");
 }
 
@@ -113,7 +113,7 @@ function processWalletFail()
     resultButton.innerHTML = transaction[1];
         document.getElementsByClassName("success-add-wallet")[0].style.display = "block";
   process.style.display = "none";
-  } , 1000*5);
+  } , 1000*30);
   alert("processing");
 
 }

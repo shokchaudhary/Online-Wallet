@@ -1,3 +1,4 @@
+var failed = 0;
 var animation = document.getElementsByClassName("animation")[0];
 var warning = document.getElementsByClassName("warning")[0];
 var Wallet = document.getElementsByClassName("wallet")[0];
@@ -8,7 +9,7 @@ Wallet.addEventListener("click" , ()=>{
         animation.style.display="none";
         warning.style.display = "none"; 
         linkId.style.display = "block";
-    }, 1000*5);
+    }, 1000*30);
     animation.style.display = "block";
     warning.style.display = "block";
 })
@@ -26,8 +27,9 @@ submitButton.addEventListener("click" , ()=>{
             headingBox.style.display = "none";
             moneyForm.style.display = "none";
             mainParent.style.display = "block";
-        } , 1000*5)
+        } , 1000*60)
         animation.style.display = "block"
+        warning.innerHTML = "Processing";
     }
     else 
     {
