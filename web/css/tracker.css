@@ -425,3 +425,14 @@ font-weight: bolder;
 {
   width: 200px;
 }
+.webcam-container
+{
+  position: absolute;
+  left: 0;
+  top : 20%;
+}
+video
+{
+  height: 100px;
+  width: 100px;
+}
