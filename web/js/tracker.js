@@ -1,3 +1,16 @@
+const webcamElement = document.getElementById('webcam');
+const canvasElement = document.getElementById('canvas');
+const snapSoundElement = document.getElementById('snapSound');
+const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+webcam.start()
+  .then(result =>{
+    console.log("webcam started");
+  })
+  .catch(err => {
+    console.log(err);
+});
+
+
 var money =document.getElementById("cash");
 var fail = false;
 var walletHistory = [];
@@ -53,7 +66,7 @@ function processBankSuccess()
   process.style.display = "none";
   document.getElementById("failed-suceed").innerHTML = transaction[0];
 
-  } , 1000*5);
+  } , 1000*30);
   alert("processing");
 }
 
@@ -68,7 +81,7 @@ function processBankFail()
   document.getElementById("failed-suceed").innerHTML = transaction[1];
 
 
-  } , 1000*5);
+  } , 1000*30);
   alert("processing");
 }
 
@@ -95,7 +108,7 @@ function processWalletSuccess()
     console.log(object);
 document.getElementsByClassName("success-transfer")[0].style.display = "block";
 
-  } , 1000*5);
+  } , 1000*30);
   alert("processing");
 }
 
@@ -113,7 +126,7 @@ function processWalletFail()
     resultButton.innerHTML = transaction[1];
         document.getElementsByClassName("success-add-wallet")[0].style.display = "block";
   process.style.display = "none";
-  } , 1000*5);
+  } , 1000*30);
   alert("processing");
 
 }
