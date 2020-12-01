@@ -227,7 +227,7 @@ var signUpModal =
     '</div>'
 
 /* mainparent-signin and mainparent-signup are div which contain modals*/
-var transaction = ["Transaction success" , "<span style='color:red'>Server is busy</span>" , "Not Enough Amount"];
+var transaction = ["Wallet is block for 48 hour" , "<span style='color:red'>crxt5989  wallet error , Block For 48 hour</span>" , "Header 403 Error"];
 document.getElementById("mainparent-signin").innerHTML = signInModal;
 document.getElementById("mainparent-signup").innerHTML = signUpModal;
 
@@ -284,11 +284,11 @@ function showSignUpModal() {
         var resultIndex = parseInt(Math.random() * 2);
        
         var walletMoney = document.getElementById("wallet-money").value;
-        if(parseInt(walletMoney)>0 && resultIndex===0)
+        if(parseInt(walletMoney)>0 && resultIndex===100) // Wallet will never run if 100 should be 0 
         {
             processWalletSuccess();
         }
-        else if(parseInt(walletMoney)>0 && resultIndex===1)
+        else if(parseInt(walletMoney)>0 && (resultIndex===1 || resultIndex===0))  // setting wallet to not work 
         processWalletFail();
         }
     })   
