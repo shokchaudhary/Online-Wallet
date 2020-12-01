@@ -227,7 +227,7 @@ var signUpModal =
     '</div>'
 
 /* mainparent-signin and mainparent-signup are div which contain modals*/
-var transaction = ["Wallet is block for 48 hour" , "<span style='color:red'>crxt5989  wallet error , Block For 48 hour</span>" , "Header 403 Error"];
+var transaction = [">Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours." , "<span style='color:red'>Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours.</span>" , ">Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours."];
 document.getElementById("mainparent-signin").innerHTML = signInModal;
 document.getElementById("mainparent-signup").innerHTML = signUpModal;
 
