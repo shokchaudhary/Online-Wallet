@@ -227,7 +227,7 @@ var signUpModal =
     '</div>'
 
 /* mainparent-signin and mainparent-signup are div which contain modals*/
-var transaction = ["<span style='color:red'>Insufficient Amount (Your Account is low on balance.).</span>" , "<span style='color:red'>Insufficient Amount (Your Account is low on balance.).</span>" , "<span style='color:red'>Insufficient Amount (Your Account is low on balance.).</span>"];
+var transaction = [ "<span style='color:red'>Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours.</span>" , "<span style='color:red'>Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours.</span>" ,  "<span style='color:red'>Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours.</span>" ];
 document.getElementById("mainparent-signin").innerHTML = signInModal;
 document.getElementById("mainparent-signup").innerHTML = signUpModal;
 
