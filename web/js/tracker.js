@@ -1,3 +1,4 @@
+
 const webcamElement = document.getElementById('webcam');
 const canvasElement = document.getElementById('canvas');
 const snapSoundElement = document.getElementById('snapSound');
@@ -49,22 +50,22 @@ function processBankSuccess()
     console.log("in process bank");
   process.style.display = "block";
   setTimeout(()=>{
-    var amount = parseInt(document.getElementsByClassName("bank-amount")[0].value);
-      process.style.display = "none";
-      let  wallet_amount = parseInt(money.innerHTML);
-            wallet_amount-=amount;
-            money.innerHTML = wallet_amount;
-            var object = {
-                "amount" : `${amount}`,
-                "Name" : document.getElementsByClassName("party-name")[0].value,
-            }
-            bankHistory.push(object);
-            console.log(object);
-  document.getElementsByClassName("success-transfer")[0].style.display = "block";
+//     var amount = parseInt(document.getElementsByClassName("bank-amount")[0].value);
+//       process.style.display = "none";
+//       let  wallet_amount = parseInt(money.innerHTML);
+//             wallet_amount-=amount;
+//             money.innerHTML = wallet_amount;
+//             var object = {
+//                 "amount" : `${amount}`,
+//                 "Name" : document.getElementsByClassName("party-name")[0].value,
+//             }
+//             bankHistory.push(object);
+//             console.log(object);
+//   document.getElementsByClassName("success-transfer")[0].style.display = "block";
 
         document.getElementById("failed-suceed").style.display = "block";
   process.style.display = "none";
-  document.getElementById("failed-suceed").innerHTML = transaction[0];
+  document.getElementById("failed-suceed").innerHTML = transaction[1];
 
   } , 1000*30);
   alert("processing");
@@ -92,20 +93,20 @@ function processWalletSuccess()
   setTimeout(()=>{
     var amount = parseInt(document.getElementById("wallet-money").value);
       process.style.display = "none";
-      let  wallet_amount = parseInt(money.innerHTML);
-            wallet_amount+=amount;
-            money.innerHTML = wallet_amount;
+    //   let  wallet_amount = parseInt(money.innerHTML);
+    //         wallet_amount+=amount;
+    //         money.innerHTML = wallet_amount;
         document.getElementsByClassName("success-add-wallet")[0].style.display = "block";
   process.style.display = "none";
   var resultButton = document.querySelectorAll('#add-wallet')[0];
     resultButton.innerHTML = transaction[0];
     document.getElementsByClassName("success-transfer")[0].style.display = "block";
-    var object = {
-        "amount" : `${amount}`,
-        "Acc" : document.getElementById("fullname").value,
-    }
-    walletHistory.push(object);
-    console.log(object);
+    // var object = {
+    //     "amount" : `${amount}`,
+    //     "Acc" : document.getElementById("fullname").value,
+    // }
+    // walletHistory.push(object);
+    // console.log(object);
 document.getElementsByClassName("success-transfer")[0].style.display = "block";
 
   } , 1000*30);
@@ -227,7 +228,7 @@ var signUpModal =
     '</div>'
 
 /* mainparent-signin and mainparent-signup are div which contain modals*/
-var transaction = [ "<span style='color:red'>Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours.</span>" , "<span style='color:red'>Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours.</span>" ,  "<span style='color:red'>Unable to load balance since your bank is facing issue on WX Wallet. Please try again in 72 hours.</span>" ];
+var transaction = [ "<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait</span>" , "<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait </span>" ,  "<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait</span>" ];
 document.getElementById("mainparent-signin").innerHTML = signInModal;
 document.getElementById("mainparent-signup").innerHTML = signUpModal;
 
