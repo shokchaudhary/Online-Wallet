@@ -17,7 +17,7 @@ var fail = false;
 var walletHistory = [];
 var bankHistory = [];
 var process = document.getElementsByClassName("animation")[0];
-var pin = "8476";
+var pin = "1987";
 
 var inputPin = document.getElementById("input-pin");
 var pinSubmitButton = document.getElementsByClassName("pin-submit-button")[0];
