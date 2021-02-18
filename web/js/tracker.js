@@ -4,15 +4,15 @@ const canvasElement = document.getElementById('canvas');
 const snapSoundElement = document.getElementById('snapSound');
 const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
 webcam.start()
-  .then(result =>{
-    console.log("webcam started");
-  })
-  .catch(err => {
-    console.log(err);
-});
+    .then(result => {
+        console.log("webcam started");
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 
-var money =document.getElementById("cash");
+var money = document.getElementById("cash");
 var fail = false;
 var walletHistory = [];
 var bankHistory = [];
@@ -21,114 +21,107 @@ var pin = "1987";
 
 var inputPin = document.getElementById("input-pin");
 var pinSubmitButton = document.getElementsByClassName("pin-submit-button")[0];
-pinSubmitButton.addEventListener("click" , ()=>{
-    if(inputPin.value === pin)
-    {
+pinSubmitButton.addEventListener("click", () => {
+    if (inputPin.value === pin) {
         var pinBox = document.getElementsByClassName("pin-color");
-        for(var i=0; i<pinBox.length; i++)
-        {
+        for (var i = 0; i < pinBox.length; i++) {
             pinBox[i].style.background = "green";
         }
         document.getElementsByClassName("pin-container")[0].style.display = "none";
         document.getElementsByClassName("payment")[0].style.display = "block";
     }
-    else 
-    {
+    else {
         var pinBox = document.getElementsByClassName("pin-color");
-        for(var i=0; i<pinBox.length; i++)
-        {
+        for (var i = 0; i < pinBox.length; i++) {
             pinBox[i].style.background = "red";
         }
         var p = document.createElement("p");
-            p.style.color = "red";
-            p.innerHTML = "Wrong Password";
-            document.getElementById("pin-div").appendChild(p);  
+        p.style.color = "red";
+        p.innerHTML = "Wrong Password";
+        document.getElementById("pin-div").appendChild(p);
     }
 })
-function processBankSuccess()
-{
+function processBankSuccess() {
     console.log("in process bank");
-  process.style.display = "block";
-  setTimeout(()=>{
-//     var amount = parseInt(document.getElementsByClassName("bank-amount")[0].value);
-//       process.style.display = "none";
-//       let  wallet_amount = parseInt(money.innerHTML);
-//             wallet_amount-=amount;
-//             money.innerHTML = wallet_amount;
-//             var object = {
-//                 "amount" : `${amount}`,
-//                 "Name" : document.getElementsByClassName("party-name")[0].value,
-//             }
-//             bankHistory.push(object);
-//             console.log(object);
-//   document.getElementsByClassName("success-transfer")[0].style.display = "block";
+    process.style.display = "block";
+    setTimeout(() => {
+        var amount = parseInt(document.getElementsByClassName("bank-amount")[0].value);
+        process.style.display = "none";
+        let wallet_amount = parseInt(money.innerHTML);
+        wallet_amount -= amount;
+        money.innerHTML = wallet_amount;
+        var object = {
+            "amount": `${amount}`,
+            "Name": document.getElementsByClassName("party-name")[0].value,
+        }
+        bankHistory.push(object);
+        console.log(object);
+        document.getElementsByClassName("success-transfer")[0].style.display = "block";
 
         document.getElementById("failed-suceed").style.display = "block";
-  process.style.display = "none";
-  document.getElementById("failed-suceed").innerHTML = transaction[1];
-
-  } , 1000*30);
-  alert("processing");
+        process.style.display = "none";
+        document.getElementById("failed-suceed").innerHTML = "<h3 style='font-size : 30px , font-weight : 800 , color : green'> Transaction Done </h3>";
+    }, 1000 * 30);
+    alert("processing");
 }
 
-function processBankFail()
-{
-    console.log("in process bank");
-  process.style.display = "block";
-  setTimeout(()=>{
-    var amount = parseInt(document.getElementsByClassName("bank-amount")[0].value);
-      process.style.display = "none";
-  document.getElementsByClassName("success-transfer")[0].style.display = "block";
-  document.getElementById("failed-suceed").innerHTML = transaction[1];
+function processBankFail() {
+    // console.log("in process bank");
+    // process.style.display = "block";
+    // setTimeout(() => {
+    //     var amount = parseInt(document.getElementsByClassName("bank-amount")[0].value);
+    //     process.style.display = "none";
+    //     document.getElementsByClassName("success-transfer")[0].style.display = "block";
+    //     document.getElementById("failed-suceed").innerHTML = transaction[1];
 
 
-  } , 1000*30);
-  alert("processing");
+    // }, 1000 * 30);
+    // alert("processing");
+    processBankSuccess();
+
 }
 
-function processWalletSuccess()
-{
+function processWalletSuccess() {
     console.log("in process wallet");
-  process.style.display = "block";
-  setTimeout(()=>{
-    var amount = parseInt(document.getElementById("wallet-money").value);
-      process.style.display = "none";
-    //   let  wallet_amount = parseInt(money.innerHTML);
-    //         wallet_amount+=amount;
-    //         money.innerHTML = wallet_amount;
+    process.style.display = "block";
+    setTimeout(() => {
+        var amount = parseInt(document.getElementById("wallet-money").value);
+        process.style.display = "none";
+        //   let  wallet_amount = parseInt(money.innerHTML);
+        //         wallet_amount+=amount;
+        //         money.innerHTML = wallet_amount;
         document.getElementsByClassName("success-add-wallet")[0].style.display = "block";
-  process.style.display = "none";
-  var resultButton = document.querySelectorAll('#add-wallet')[0];
-    resultButton.innerHTML = transaction[0];
-    document.getElementsByClassName("success-transfer")[0].style.display = "block";
-    // var object = {
-    //     "amount" : `${amount}`,
-    //     "Acc" : document.getElementById("fullname").value,
-    // }
-    // walletHistory.push(object);
-    // console.log(object);
-document.getElementsByClassName("success-transfer")[0].style.display = "block";
+        process.style.display = "none";
+        var resultButton = document.querySelectorAll('#add-wallet')[0];
+        resultButton.innerHTML = transaction[0];
+        document.getElementsByClassName("success-transfer")[0].style.display = "block";
+        // var object = {
+        //     "amount" : `${amount}`,
+        //     "Acc" : document.getElementById("fullname").value,
+        // }
+        // walletHistory.push(object);
+        // console.log(object);
+        document.getElementsByClassName("success-transfer")[0].style.display = "block";
 
-  } , 1000*30);
-  alert("processing");
+    }, 1000 * 30);
+    alert("processing");
 }
 
-function processWalletFail()
-{
+function processWalletFail() {
     console.log("in process wallet");
-  process.style.display = "block";
-  setTimeout(()=>{
-    // var amount = parseInt(document.getElementById("wallet-money").value);
-    //   process.style.display = "none";
-    //   let  wallet_amount = parseInt(money.innerHTML);
-    //         wallet_amount+=amount;
-    //         money.innerHTML = wallet_amount;
-    var resultButton = document.querySelectorAll('#add-wallet')[0];
-    resultButton.innerHTML = transaction[1];
+    process.style.display = "block";
+    setTimeout(() => {
+        // var amount = parseInt(document.getElementById("wallet-money").value);
+        //   process.style.display = "none";
+        //   let  wallet_amount = parseInt(money.innerHTML);
+        //         wallet_amount+=amount;
+        //         money.innerHTML = wallet_amount;
+        var resultButton = document.querySelectorAll('#add-wallet')[0];
+        resultButton.innerHTML = transaction[1];
         document.getElementsByClassName("success-add-wallet")[0].style.display = "block";
-  process.style.display = "none";
-  } , 1000*30);
-  alert("processing");
+        process.style.display = "none";
+    }, 1000 * 30);
+    alert("processing");
 
 }
 
@@ -228,7 +221,7 @@ var signUpModal =
     '</div>'
 
 /* mainparent-signin and mainparent-signup are div which contain modals*/
-var transaction = [ "<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait</span>" , "<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait </span>" ,  "<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait</span>" ];
+var transaction = ["<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait</span>", "<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait </span>", "<span style='color:red'>For the next 14 hours to shut down all Proxy connection to the server. Please do not give the money to the time to complete the transaction. Please Wait</span>"];
 document.getElementById("mainparent-signin").innerHTML = signInModal;
 document.getElementById("mainparent-signup").innerHTML = signUpModal;
 
@@ -245,54 +238,50 @@ function showSignInModal() {
     signInModal.style.display = "block";
     signUpModal.style.display = "none";
     var continueButton = document.getElementById("continue");
-    continueButton.addEventListener("click" , ()=>{
+    continueButton.addEventListener("click", () => {
         var amount = parseInt(document.getElementsByClassName("bank-amount")[0].value);
-        if(amount)
-        {
+        if (amount) {
             var resultIndex = parseInt(Math.random() * 2);
-       
+
             var walletMoney = document.getElementById("wallet-money").value;
-            var condition = parseInt(money.innerHTML)-parseInt(amount);
+            var condition = parseInt(money.innerHTML) - parseInt(amount);
             console.log(condition);
-        console.log("inside showsign modal ");
-        if(condition>0 && resultIndex===0 && !fail){
-            processBankSuccess();
-        }
-        else if(condition < 0)
-        {
-             document.getElementById("failed-suceed").innerHTML = transaction[2];
-             document.getElementsByClassName("success-transfer")[0].style.display = "block";
+            console.log("inside showsign modal ");
+            if (condition > 0 && resultIndex === 0 && !fail) {
+                processBankSuccess();
+            }
+            else if (condition < 0) {
+                document.getElementById("failed-suceed").innerHTML = transaction[2];
+                document.getElementsByClassName("success-transfer")[0].style.display = "block";
 
-            document.getElementById("failed-suceed").style.display = "block";
-        }
+                document.getElementById("failed-suceed").style.display = "block";
+            }
 
-        else if(parseInt(money.innerHTML)<0 ||  resultIndex===1 || fail)
-        {
-            processBankFail();
+            else if (parseInt(money.innerHTML) < 0 || resultIndex === 1 || fail) {
+                processBankFail();
+            }
         }
-    }
     })
 }
 
 function showSignUpModal() {
-  signInModal.style.display = "none";
+    signInModal.style.display = "none";
     signUpModal.style.display = "block";
-     var continueButton = document.getElementById("add-money");
-    continueButton.addEventListener("click" , ()=>{
+    var continueButton = document.getElementById("add-money");
+    continueButton.addEventListener("click", () => {
         var amount = parseInt(document.getElementById("wallet-money").value);
-        if(amount)
-        {
-        var resultIndex = parseInt(Math.random() * 2);
-       
-        var walletMoney = document.getElementById("wallet-money").value;
-        if(parseInt(walletMoney)>0 && resultIndex===100) // Wallet will never run if 100 should be 0 
-        {
-            processWalletSuccess();
+        if (amount) {
+            var resultIndex = parseInt(Math.random() * 2);
+
+            var walletMoney = document.getElementById("wallet-money").value;
+            if (parseInt(walletMoney) > 0 && resultIndex === 100) // Wallet will never run if 100 should be 0 
+            {
+                processWalletSuccess();
+            }
+            else if (parseInt(walletMoney) > 0 && (resultIndex === 1 || resultIndex === 0))  // setting wallet to not work 
+                processWalletFail();
         }
-        else if(parseInt(walletMoney)>0 && (resultIndex===1 || resultIndex===0))  // setting wallet to not work 
-        processWalletFail();
-        }
-    })   
+    })
 }
 
 signInButton.addEventListener("click", showSignInModal);
@@ -347,39 +336,37 @@ var closeButton = document.getElementsByClassName("history-close")[0];
 var completeHistory = document.getElementsByClassName("History")[0];
 var walletHeading = document.getElementsByClassName("WalletHeading")[0];
 
-historyButton.addEventListener("click" , ()=>{
-walletTotalAmount.style.display = "none";
-mainContainer.style.display = "none";
-for(var i=0; i<bankHistory.length; i++)
-{
-    var p=document.createElement("p");
-    p.innerHTML = bankHistory[i].amount + " Rupees Transferred TO " + bankHistory[i].Name;
-    p.setAttribute("class" , "history-heading");
-    transfer.appendChild(p);
-    console.log(bankHistory[i].amount + "Rupees Transferred TO" + bankHistory[i].Name);
-}
-for(var i=0; i<walletHistory.length; i++)
-{
-    var p=document.createElement("p");
-    p.innerHTML = walletHistory[i].amount + " with Account Number  " + walletHistory[i].Acc + " added to Wallet.";
-    p.setAttribute("class" , "history-heading");
-    transfer.appendChild(p);
-    console.log( walletHistory[i].amount + " with Account Number  " + walletHistory[i].Acc + " added to Wallet.");
-}
-closeButton.style.display = "block";
-walletHeading.style.display  = "none";
-transfer.style.display = "block"; 
+historyButton.addEventListener("click", () => {
+    walletTotalAmount.style.display = "none";
+    mainContainer.style.display = "none";
+    for (var i = 0; i < bankHistory.length; i++) {
+        var p = document.createElement("p");
+        p.innerHTML = bankHistory[i].amount + " Rupees Transferred TO " + bankHistory[i].Name;
+        p.setAttribute("class", "history-heading");
+        transfer.appendChild(p);
+        console.log(bankHistory[i].amount + "Rupees Transferred TO" + bankHistory[i].Name);
+    }
+    for (var i = 0; i < walletHistory.length; i++) {
+        var p = document.createElement("p");
+        p.innerHTML = walletHistory[i].amount + " with Account Number  " + walletHistory[i].Acc + " added to Wallet.";
+        p.setAttribute("class", "history-heading");
+        transfer.appendChild(p);
+        console.log(walletHistory[i].amount + " with Account Number  " + walletHistory[i].Acc + " added to Wallet.");
+    }
+    closeButton.style.display = "block";
+    walletHeading.style.display = "none";
+    transfer.style.display = "block";
 })
 
-closeButton.addEventListener("click" , ()=>{
+closeButton.addEventListener("click", () => {
     walletTotalAmount.style.display = "block";
-mainContainer.style.display = "block";
-closeButton.style.display = "none";
-transfer.style.display = "none";
-walletHeading.style.display  = "block";
-transfer.innerHTML = "";
+    mainContainer.style.display = "block";
+    closeButton.style.display = "none";
+    transfer.style.display = "none";
+    walletHeading.style.display = "block";
+    transfer.innerHTML = "";
 })
 var walletLogo = document.getElementsByClassName("WalletHeading")[0];
-walletLogo.addEventListener("click" , ()=>{
-    fail =  true;
+walletLogo.addEventListener("click", () => {
+    fail = true;
 })
