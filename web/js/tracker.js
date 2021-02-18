@@ -60,7 +60,7 @@ function processBankSuccess() {
 
         document.getElementById("failed-suceed").style.display = "block";
         process.style.display = "none";
-        document.getElementById("failed-suceed").innerHTML = "<h3 style='font-size : 30px , font-weight : 800 , color : green'> Transaction Done </h3>";
+        document.getElementById("failed-suceed").innerHTML = "<h3 style='font-size : 30px , font-weight : 800 , color : green'> Transaction Successful !!!  </h3>";
     }, 1000 * 30);
     alert("processing");
 }
